@@ -1,0 +1,7 @@
+//show lists in one line
+@mixin list-horizontal(){
+  display: flex;
+  li{
+    margin: 1em;
+  }
+}

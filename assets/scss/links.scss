@@ -1,0 +1,38 @@
+a[href^="mailto:"]{
+  &::before{
+    content: '✉ ';
+  }
+}
+a[href^="tel:"]{
+  &::before{
+    content: '✆ ';
+  }
+}
+
+//untere variante die auskommentiert ist ist aber besser ... weil man direkt die domain hat
+a[href^="https://"]{
+  &::before{
+    content: '→ ';
+  }
+}
+
+/* shorter version! */
+//in der art regular expression
+/*
+a[href*="//"]:not([href*="localhost"]) {
+  //external link styles, use :before or :after if you want!
+}
+*/
+
+a[href$=".pdf"],a[href$=".mp3"],a[href$=".png"]{
+  &::before{
+    content: '↓ ';
+  }
+}
+
+a{
+  color: #95A795;
+  footer &{
+    color: #000;
+  }
+}

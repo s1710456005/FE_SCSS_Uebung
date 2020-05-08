@@ -1,0 +1,43 @@
+//playholder selectors
+%notice{
+  padding: 3em 1em;
+  border: 2px solid #949494;
+  border-radius: 4px;
+}
+
+//extend heißt erweitere es, sowie ein mixin
+//mixin kann zb etwas mehr wo du parameter mitgeben kannst
+.notice-info {
+  @extend %notice;
+  color: #0000ff;
+  border-color: #0000ff;
+}
+.notice-warning{
+  @extend %notice;
+  color: orange;
+  border-color: orange;
+}
+.notice-error{
+  @extend %notice;
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+@each $name in 'info' 'warning' 'error'{
+  .notice-#{$name}{
+    background-image: url("img/icon-#{$name}.svg");
+    background-repeat: no-repeat;
+    background-position-x: right;
+  }
+}
+
+.button{
+  display: inline-block;
+  padding: 1.5em 2em;
+  color: #fff;
+  background-color: make-greener($gray);
+  border: 1px solid $gray;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}

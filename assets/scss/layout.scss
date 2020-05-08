@@ -1,0 +1,8 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    //gibt zb. auch print, das geht in die druckansicht
+    @media only screen and (min-width: $breakpoint-md) {
+        padding: 3em;
+    }
+}
